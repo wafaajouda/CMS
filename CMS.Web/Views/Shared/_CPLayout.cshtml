@@ -445,47 +445,6 @@
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
 
 
-@*     <script type="module">
-
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-analytics.js";
-
-
-            const firebaseConfig = {
-                apiKey: "AIzaSyCmCWruVV7F0y1cCwE_s93fXVJIcwRBnQ4",
-                authDomain: "cmsweb-b1aa8.firebaseapp.com",
-                projectId: "cmsweb-b1aa8",
-                storageBucket: "cmsweb-b1aa8.appspot.com",
-                messagingSenderId: "1020282346736",
-                appId: "1:1020282346736:web:d42de194e7442f9c91f635",
-                measurementId: "G-H7R0REYVQR"
-            };
-
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-
-            const messaging = firebase.messaging();
-
-            messaging.requestPermission().then(() => {
-                return messaging.getToken();
-            }).then(token => {
-                console.log(token);
-                $.ajax({
-                    url: "/User/AddFCM?fcm=" + token,
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function (res) {
-                        console.log(res);
-                    }
-                });
-            }).catch(err => {
-
-            })
-
-            messaging.onMessage(payload => {
-                alert("ahmed");
-            })
-    </script> *@
 
 
 
