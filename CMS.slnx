@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="CMS.Core/CMS.Core.csproj" Id="8fa7bc59-993d-4db7-b84d-ef2affa4d399" />
+  <Project Path="CMS.Data/CMS.Data.csproj" />
+  <Project Path="CMS.Infrastructure/CMS.Infrastructure.csproj" Id="5c931704-adef-4d38-a753-965ec2d98551" />
+  <Project Path="CMS.Web/CMS.Web.csproj" />
+</Solution>
