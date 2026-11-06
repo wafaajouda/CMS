@@ -1,4 +1,4 @@
-﻿@* @{
+﻿@{
     string Action = null;
     string Controller = null;
     string currentURL = null;
@@ -13,7 +13,7 @@
     {
         Console.WriteLine(e.Message);
     }
-} *@
+}
 
 <html lang="en" direction="rtl" style="direction: rtl;">
 <head>
@@ -42,7 +42,7 @@
     <link href="~/css/Elghad.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 
-    <style>
+<style>
 
             body {
                 font-family: 'Cairo', sans-serif;
@@ -156,7 +156,7 @@
                                     </a>
                                 </li>
 
-                                <li class="menu-item menu-item" aria-haspopup="true">
+                            <li class="menut-iem menu-item" aria-haspopup="true">
                                     <a href="~/User/Index" class="menu-link">
                                         <span class="svg-icon svg-icon-primary svg-icon-2x">
                                             <!--begin::Svg Icon | path:/var/www/preview.keenthemes.com/metronic/releases/2021-05-14-112058/theme/html/demo1/dist/../src/media/svg/icons/Files/User-folder.svg-->
@@ -169,7 +169,7 @@
                                                 </g>
                                             </svg><!--end::Svg Icon-->
                                         </span>
-                                        <span class="menu-text"> ادارة المستخدمين </span>
+                                        <span class="menu-text"> إدارة المستخدمين </span>
                                     </a>
                                 </li>
 
@@ -185,7 +185,7 @@
                                                 </g>
                                             </svg><!--end::Svg Icon-->
                                         </span>
-                                        <span class="menu-text"> ادارة التصنيفات </span>
+                                        <span class="menu-text"> إدارة التصنيفات </span>
                                     </a>
                                 </li>
                                 <li class="menu-item menu-item" aria-haspopup="true">
@@ -390,7 +390,7 @@
 
     <!-- end::User Panel-->
     <!--begin::Modal-->
-    <div class="modal fade" data-toggle="PopUp" data-target="modal" id="PopUp" role="dialog" aria-hidden="true">
+    <div class="modal fade" data-bs-toggle="PopUp" data-bs-target="modal" id="PopUp" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -400,6 +400,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
+
                 </div>
             </div>
         </div>
@@ -421,6 +422,8 @@
             </div>
         </div>
     </div>
+    <!--end::Modal-->
+
 
     <!--end::Modal-->
     <script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
@@ -433,59 +436,44 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
     <script>
-            const permissions = {
-                0: { 'name': 'Dashboard' },
-                1: { 'name': 'Supervisor' },
-                2: { 'name': 'Role' },
-            };
+        const permissions = {
+            0: { 'name': 'Dashboard' },
+            1: { 'name': 'Supervisor' },
+            2: { 'name': 'Role' },
+        };
     </script>
 
-    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
-    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"></script>
 
 
-@*     <script type="module">
+    <script type="module">
+     
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-analytics.js";
 
-            import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
-            import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-analytics.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCmCWruVV7F0y1cCwE_s93fXVJIcwRBnQ4",
+            authDomain: "cmsweb-b1aa8.firebaseapp.com",
+            projectId: "cmsweb-b1aa8",
+            storageBucket: "cmsweb-b1aa8.appspot.com",
+            messagingSenderId: "1020282346736",
+            appId: "1:1020282346736:web:d42de194e7442f9c91f635",
+            measurementId: "G-H7R0REYVQR"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const messaging = firebase.messaging();
 
 
-            const firebaseConfig = {
-                apiKey: "AIzaSyCmCWruVV7F0y1cCwE_s93fXVJIcwRBnQ4",
-                authDomain: "cmsweb-b1aa8.firebaseapp.com",
-                projectId: "cmsweb-b1aa8",
-                storageBucket: "cmsweb-b1aa8.appspot.com",
-                messagingSenderId: "1020282346736",
-                appId: "1:1020282346736:web:d42de194e7442f9c91f635",
-                measurementId: "G-H7R0REYVQR"
-            };
 
-            // Initialize Firebase
-            firebase.initializeApp(firebaseConfig);
-
-            const messaging = firebase.messaging();
-
-            messaging.requestPermission().then(() => {
-                return messaging.getToken();
-            }).then(token => {
-                console.log(token);
-                $.ajax({
-                    url: "/User/AddFCM?fcm=" + token,
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function (res) {
-                        console.log(res);
-                    }
-                });
-            }).catch(err => {
-
-            })
-
-            messaging.onMessage(payload => {
-                alert("ahmed");
-            })
-    </script> *@
-
+        messaging.onMessage(payload => {
+            alert("ahmed");
+        })
+    </script>
 
 
     @RenderSection("Scripts", required: false)

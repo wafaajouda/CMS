@@ -14,7 +14,7 @@ namespace CMS.Core.ViewModels
         public string PhoneNumber { get; set; }
         public DateTime? BOD { get; set; }
         public string? ImageUrl { get; set; }
-        public UserType UserType { get; set; }
+        public string UserType { get; set; }
         public DateTime CreatedAt { get; set; }
     }
 }
