@@ -73,6 +73,17 @@ namespace CMS.Infrastructure.Services.Advertisements
             return advertisement.Id;
         }
 
+        public async Task<UpdateAdvertisementDto> Get(int id)
+        {
+            var advertisement = await _db.Advertisements.SingleOrDefaultAsync(x => x.Id == id && !x.IsDelete);
+            if (advertisement == null)
+            {
+                throw new EntityNotFoundException();
+            }
+
+            return _mapper.Map<UpdateAdvertisementDto>(advertisement);
+        }
+
         public async Task<int> Create(CreateAdvertisementDto dto)
         {
             if(dto.StartDate >= dto.EndDate)
@@ -101,6 +112,29 @@ namespace CMS.Infrastructure.Services.Advertisements
                 await _db.SaveChangesAsync();
 
             }
+
+            return advertisement.Id;
+        }
+        public async Task<int> Update(UpdateAdvertisementDto dto)
+        {
+            if (dto.StartDate >= dto.EndDate)
+            {
+                throw new InvalidDateException();
+            }
+
+            var advertisement = await _db.Advertisements.SingleOrDefaultAsync(x => x.Id == dto.Id && !x.IsDelete);
+            if(advertisement == null)
+            {
+                throw new EntityNotFoundException();
+            }
+            var updatedAdvertisement = _mapper.Map(dto, advertisement);
+            if (dto.Image != null)
+            {
+                updatedAdvertisement.ImageUrl = await _fileService.SaveFile(dto.Image, "Images");
+            }
+
+            _db.Advertisements.Update(updatedAdvertisement);
+            await _db.SaveChangesAsync();
 
             return advertisement.Id;
         }

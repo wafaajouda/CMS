@@ -55,24 +55,24 @@ namespace CMS.Web.Controllers
             return View(dto);
         }
 
-        //[HttpGet]
-        //public async Task<IActionResult> Update(int id)
-        //{
-        //    var advertisement = await _advertisementService.Get(id);
-        //    return View(advertisement);
-        //}
+        [HttpGet]
+        public async Task<IActionResult> Update(int id)
+        {
+            var advertisement = await _advertisementService.Get(id);
+            return View(advertisement);
+        }
 
-        //[HttpPost]
-        //public async Task<IActionResult> Update(UpdateAdvertisementDto dto)
-        //{
-        //    if (ModelState.IsValid)
-        //    {
-        //        await _advertisementService.Update(dto);
-        //        return Ok(Result.EditSuccessResult());
-        //    }
-        //    return View(dto);
-        //}
-
+        [HttpPost]
+        public async Task<IActionResult> Update(UpdateAdvertisementDto dto)
+        {
+            if (ModelState.IsValid)
+            {
+                await _advertisementService.Update(dto);
+                return Ok(Result.EditSuccessResult());
+            }
+            return View(dto);
+        }
+       
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {

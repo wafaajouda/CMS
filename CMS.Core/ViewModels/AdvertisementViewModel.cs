@@ -17,5 +17,6 @@ namespace CMS.Core.ViewModels
         public string EndDate { get; set; }
         public decimal? Price { get; set; }
         public UserViewModel Owner { get; set; }
+        public string CreatedAt { get; set; }
     }
 }

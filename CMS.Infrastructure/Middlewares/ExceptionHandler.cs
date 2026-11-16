@@ -1,16 +1,17 @@
-﻿using Microsoft.AspNetCore.Diagnostics;
+﻿using CMS.Core.Exceptions;
+using CMS.Core.ViewModels;
+using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Localization;
 using Newtonsoft.Json;
 using System;
-using System.IO;
+using System.Collections.Generic;
 using System.Net;
 using System.Text;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Localization;
+using System.IO;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http.Extensions;
-using CMS.Core.Exceptions;
-using CMS.Core.ViewModels;
 
 namespace CMS.Infrastructure.Middlewares
 {
@@ -25,7 +26,7 @@ namespace CMS.Infrastructure.Middlewares
             _serviceProvider = serviceProvider;
         }
 
-                public async Task Invoke(HttpContext context)
+        public async Task Invoke(HttpContext context)
         {
             var exceptionHandlerPathFeature = context.Features.Get<IExceptionHandlerPathFeature>();
             var exception = exceptionHandlerPathFeature.Error;

@@ -25,7 +25,7 @@ namespace CMS.Core.Dtos
         public IFormFile? Image { get; set; }
         [Display(Name = "تاريخ الميلاد")]
         [DataType(DataType.Date)]
-        public DateTime? BOD {  get; set; }
+        public DateTime? BOD { get; set; }
         [Required]
         [Display(Name = "نوع المستخدم")]
         public UserType UserType { get; set; }

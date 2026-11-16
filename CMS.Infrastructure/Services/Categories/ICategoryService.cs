@@ -1,4 +1,5 @@
-﻿using CMS.Core.Dtos;
+using CMS.Core.Dtos;
+using CMS.Core.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,5 +13,6 @@ namespace CMS.Infrastructure.Services.Categories
         Task<int> Update(UpdateCategoryDto dto);
         Task<int> Delete(int Id);
         Task<UpdateCategoryDto> Get(int Id);
+        Task<List<CategoryViewModel>> GetCategoryList();
     }
 }

@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-CMS.Web-225bc778-1f47-41b0-b79b-b977b8a456ab</UserSecretsId>
+	  <NuGetAudit>false</NuGetAudit>
 
   </PropertyGroup>
 

@@ -12,5 +12,7 @@ namespace CMS.Infrastructure.Services.Advertisements
         Task<int> Delete(int id);
         Task<int> Create(CreateAdvertisementDto dto);
         Task<List<UserViewModel>> GetAdvertisementOwner();
+        Task<int> Update(UpdateAdvertisementDto dto);
+        Task<UpdateAdvertisementDto> Get(int id);
     }
 }

@@ -6,6 +6,7 @@ namespace CMS.Core.Constant
 {
     public class Result
     {
+
         public static object AddSuccessResult()
         {
             return new { status = 1, msg = "s: تمت اضافة العنصر بنجاح", close = 1 };
