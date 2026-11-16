@@ -304,7 +304,6 @@ namespace CMS.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PublishedById")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Status")
@@ -635,9 +634,7 @@ namespace CMS.Data.Migrations
 
                     b.HasOne("CMS.Data.Models.User", "PublishedBy")
                         .WithMany("Tracks")
-                        .HasForeignKey("PublishedById")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("PublishedById");
 
                     b.Navigation("Category");
 

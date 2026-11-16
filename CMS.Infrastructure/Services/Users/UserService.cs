@@ -30,6 +30,12 @@ namespace CMS.Infrastructure.Services.Users
             _emailService = emailService;
         }
 
+        public async Task<List<UserViewModel>> GetAuthorList()
+        {
+            var users = await _db.Users.Where(x => !x.IsDelete && x.UserType == Core.Enums.UserType.ArticleAuthor).ToListAsync();
+            return _mapper.Map<List<UserViewModel>>(users);
+        }
+
         public async Task<string> Create(CreateUserDto dto)
         {
             var emailOrPhoneIsExist = _db.Users.Any(x => !x.IsDelete && (x.Email == dto.Email || x.PhoneNumber == dto.PhoneNumber));

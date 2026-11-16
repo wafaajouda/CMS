@@ -17,9 +17,14 @@ namespace CMS.Data.Models
         public string OwnerName { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-        public string PublishedById { get; set; }
+        public string? PublishedById { get; set; }
         public User PublishedBy { get; set; }
         public ContentStatus Status { get; set; }
+
+        public Track()
+        {
+            Status = ContentStatus.Pending;
+        }
 
     }
 }
