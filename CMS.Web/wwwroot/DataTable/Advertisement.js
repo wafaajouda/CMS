@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 // Class definition
 
 var KTDatatableAutoColumnHideDemo = function () {

@@ -8,7 +8,7 @@ namespace CMS.Core.Dtos
 {
     public class CreateAdvertisementDto
     {
-        [Required(ErrorMessage = "هذا الحقل مطلوب")]
+        [Required (ErrorMessage = "هذا الحقل مطلوب")]
         [Display(Name = "عنوان الإعلان")]
         public string Title { get; set; }
         [Required(ErrorMessage = "هذا الحقل مطلوب")]

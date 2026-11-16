@@ -28,5 +28,6 @@ namespace CMS.Core.Dtos
         [Display(Name = "السعر")]
         [Required(ErrorMessage = "هذا الحقل مطلوب")]
         public decimal Price { get; set; }
+        public UpdateUserDto Owner { get; set; }
     }
 }

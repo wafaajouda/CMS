@@ -72,7 +72,7 @@ namespace CMS.Web.Controllers
             }
             return View(dto);
         }
-
+       
         [HttpGet]
         public async Task<IActionResult> Delete(int id)
         {

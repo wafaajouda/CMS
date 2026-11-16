@@ -7,6 +7,11 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Text;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Localization;
+using System.IO;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http.Extensions;
 
 namespace CMS.Infrastructure.Middlewares
 {
